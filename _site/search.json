@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-04-14T17:15:57-07:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Fishy Data",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-04-14T17:15:58-07:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

@@ -1,0 +1,24 @@
+name: "fishy-data"
+title: "Fishy Data"
+description: |
+  A blog about R, fish movement, acoustic telemetry, Bayesian inference and other computery things
+output_dir: "_site"
+base_url: https://fishydata.netlify.app
+navbar:
+  logo: images/rstudio.png
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Contributors"
+      href: contributors.html
+    - icon: fa fa-rss
+      href: index.xml
+output: distill::distill_article
+collections:
+  posts:
+    disqus: fishy-data
+    share: [twitter]
+    subscribe: _subscribe.html
+    custom: _custom.html

@@ -15,5 +15,48 @@
     "preview": {},
     "last_modified": "2021-04-14T20:54:33-07:00",
     "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-14-detection-range/",
+    "title": "Detection range in acoustic telemetry arrays",
+    "description": "Accounting for detection range variation in acoustic telemetry arrays",
+    "author": [
+      {
+        "name": "Seb Dalgarno",
+        "url": "https://github.com/sebdalgarno"
+      }
+    ],
+    "date": "2021-04-14",
+    "categories": [
+      "Acoustic Telemetry",
+      "Bayesian Stats",
+      "Rstats"
+    ],
+    "contents": "\nI have been reading this great paper by Brownscombe et al., which outlines a practical approach to accounting for detection range (DR) variation in acoustic telemetry arrays. As an example of the pitfalls of failing to account for variation in DR, Brownscombe points to a study by Payne et al. (2010) on the diel patterns in use of nearshore habitats by cuttlefish. Whereas the raw data showed that cuttlefish used these areas more during the day, the corrected data showed that they used these areas more at night. Not only did this affect the effect size, but it completely changed the directionality of the effect, which fundamentally changes our understanding of the species biology and how to manage them!\nWhy is there variation in detection range?\nIn acoustic telemetry studies, we typically set up an array of stationary receivers within a study area and tag some animals with acoustic transmitters. These animals (let’s say fish) swim around sending out supersonic acoustic transmissions every few seconds. When the fish passes within the receivers detection range, the receiver records the unique id of the transmitter and time of detection. So far, pretty straightforward (at least from a data perspective, not logistically!) The tricky part is that detection efficiency (DE) decreases with distance from receiver and the DR for each receiver varies in space and time.\nSo what causes this variation?\nFirst, these acoustic signals may never reach the receiver as they can be:\nattenuated, retracted, or lost due to spreading in water.\ndisrupted by physical barriers.\nmuted by environmental or biological noise.\nSecond, the signal could be wrongly interpreted by the receiver (i.e. false detection) if:\ntags are mutated by noise but still decoded by a receiver.\ntags operating on the same frequemcy collide with one another and arrive at the receiver simultaneously.\nThese are imperfect sampling systems that are affected by conditions in the surrounding environment (e.g. rugosity, depth, anthropogenic or environmental noise) and how many other tags exist in the study area (with more tags leading to less DE).\nHow do we deal with this variation to correct our analyses?\nFrist some definitions:\n- DR - the 3-dimensional space surrounding a receiver that a transmitter can be detected in\n- DE (%) - # detections in given time period / total expected detections based on transmission rate * 100\n- MR - estimated distance from receiver with 5% DE\n- Midpoint - estimated distance from receiver with 50% DE\n- DEv - difference between detection efficiency in given time period and mean detection efficiency of reference tag\n- DEvc - DEv standardized to +/- 50% (across receivers)\n- DRc - DR correction facto derived from MR and DEvc\n- Det - number of detections\n- Detc - number of detections corrected using DRc\nBrownscombe suggests a practical approach to deal with this issue:\n1. Select a set of sentinel receivers that represent the full range of environmental conditions (these will be used to predict DE at the rest of the receivers) and measure/record site characteristics in space (e.g. depth, benthos) and time (e.g. tide, diel period).\n1. Quantify the MR and Midpoint at each sentinel receiver. This can be done by dropping a tag at various distances from a receiver, measuring DE and modelling the relationship between efficiency and distance to estimate the Midpoint and MR.\n1. Quanitfy the variance in DE (DEv) at each sentinel receiver. This is done by dropping a reference tag (i.e., tag with longer transmission delay ~200-700 seconds) at the Midpoint (e.g. 200m away) and leaving it there for the duration of the study.\n1. Calculate detection range correction factor (DRc). This uses DEv and MR.\n1. Model relationship between DRc and site characteristics to predict DRc at other receivers in array.\n1. Correct detection data using predicted DRc.\nTo make this process more clear, I’ll simulate some data and show the R code to calculate each step. Note that I referenced the code provided in Brownscombe et al. supplementary info, but have modified it quite a bit.\nCalculate Midpoint and MR\nStep 1: Create some fake receivers at different depths, half of which are sentinels.\n\n   receiver     depth sentinel\n1         1 13.770678     TRUE\n2         2  6.706725    FALSE\n3         3 15.263971     TRUE\n4         4 19.887632    FALSE\n5         5 13.024904     TRUE\n6         6 19.499211    FALSE\n7         7 15.071413     TRUE\n8         8  9.418666    FALSE\n9         9 10.375445     TRUE\n10       10  7.629721    FALSE\n11       11 13.232261     TRUE\n12       12 12.581776    FALSE\n13       13  7.907547     TRUE\n14       14 14.553562    FALSE\n15       15 15.317001     TRUE\n16       16 14.602862    FALSE\n\nStep 2: Simulate some detection range data, where depth has an effect on the DE curve.\n\n\n\nWe can estimate the Midpoint and MR for each sentinel receiver by modelling the relationship between DE and distance for each receiver. Here, we use a generalized linear model with binomial family (logistic regression), although Brownscombe et al. used a third-order polynomial liner regression with forced y-intercept at 1.\n\n\n\nNow that we’ve calculated our Midpoints for each sentinel, let’s put a reference tag there to calculate DE over time. We’ll simulate some data where DE has a positive relationship with day and the magnitude of the effect increases with depth. This is not very realistic (a seasonal effect would be better and I don’t know if influence of depth is a realistic mechanism) but it’ll work just for demonstration purposes.\n\n\n\n",
+    "preview": "posts/2021-04-14-detection-range/detection-range_files/figure-html5/dr_plot-1.png",
+    "last_modified": "2021-04-14T21:11:33-07:00",
+    "input_file": "detection-range.utf8.md",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2021-04-14-alfred/",
+    "title": "Alfred + .Rproj",
+    "description": "How to configure Alfred to search for .Rproj files",
+    "author": [
+      {
+        "name": "Seb Dalgarno",
+        "url": "https://github.com/sebdalgarno"
+      }
+    ],
+    "date": "2021-04-14",
+    "categories": [
+      "Productivity",
+      "RStudio"
+    ],
+    "contents": "\nTL;DR add dyn.ah62d4rv4ge81e6dwr7za to Preferences -> Features -> Default Results -> Advanced... panel to add .Rproj as a user-defined file type.\nOverview\nAlfred app is a productivity app (in their words) for MacOS 1 that does many many things. So far, I’ve just been using it’s search functionality and am finding it quite sweet indeed (think Spotlight, but better). The use case here is that I want to avoid using my mouse to search for various Rstudio .Rproj files (i.e. in Finder).\nHadley is god\nI first came across this tip from Hadley Wickham in this video - so you know it’s good.\nInstalling Alfred\nInstall Alfred from the website or with homebrew on the command line:\nbrew install --cask alfred\nConfiguring Alfred for .Rproj\nOpen Alfred and get into Preferences -> Features -> Default Results panel.\nAlfred1Click on Advanced... and add the following user-defined file type (by clicking +)\ndyn.ah62d4rv4ge81e6dwr7za\nAlfred1Keyboard shortcut\nI like to open Alfred with the keyboard shortcut Cmd-space instead of Spotlight. I followed the instructions here to do this.\nDone! Now open Alfred with Cmd-space and start typing in the name of a .Rproj file. Note you can add other file types for Alfred to look for (e.g. Scrivener projects). A final tip is that if you press space before typing the file name, Alfred will search all files.\nIf you are looking for more Mac productivity tips, check out this awesome Twitter thread\n\nSorry Windows users. But there are other apps for Windows that do similar things.↩︎\n",
+    "preview": {},
+    "last_modified": "2021-04-14T21:49:45-07:00",
+    "input_file": "alfred.utf8.md"
   }
 ]

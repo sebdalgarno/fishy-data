@@ -1,13 +1,11 @@
 ---
-title: "About me"
+title: "Seb Dalgarno"
 description: |
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-Hi I'm Seb Dalgarno. 
 
 I'm interested in all things rstats, fish ecology, acoustic telemetry, Bayesian stats, data visualization, and various other data/computery things. 
 
@@ -17,10 +15,8 @@ I'm a PhD student in Eduardo Martin's [Freshwater Fish Ecology lab](https://www.
 
 Check out my [consulting website](https://www.northbeachconsulting.ca/) if you'd like to hire me.
 
-{{% center %}}
-<img src="/img/sturgeon_sm.jpg" alt="sturgeon"
+<img src="images/sturgeon_sm.jpg" alt="sturgeon"
 	title="sturgeon" width="400px" />
-{{% /center %}}
 
 
 

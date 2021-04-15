@@ -5,6 +5,8 @@ description: |
 base_url: https://fishydata.netlify.app
 output_dir: "_site"
 navbar:
+  logo:
+    image: images/sturgeon_sm.jpg
   right:
     - text: "Home"
       href: index.html

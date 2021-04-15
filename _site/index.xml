@@ -9,11 +9,13 @@
     <generator>Distill</generator>
     <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Partial migration</title>
+      <title>Alfred + .Rproj</title>
       <dc:creator>Seb Dalgarno</dc:creator>
-      <link>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</link>
-      <description>Do White Sturgeon exhibit partial migration?</description>
-      <guid>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</guid>
+      <link>https://fishydata.netlify.app/posts/2021-04-14-alfred</link>
+      <description>How to configure Alfred to search for .Rproj files</description>
+      <category>Productivity</category>
+      <category>RStudio</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-14-alfred</guid>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -29,13 +31,11 @@
       <media:content url="https://fishydata.netlify.app/posts/2021-04-14-detection-range/detection-range_files/figure-html5/dr_plot-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
-      <title>Alfred + .Rproj</title>
+      <title>Partial migration</title>
       <dc:creator>Seb Dalgarno</dc:creator>
-      <link>https://fishydata.netlify.app/posts/2021-04-14-alfred</link>
-      <description>How to configure Alfred to search for .Rproj files</description>
-      <category>Productivity</category>
-      <category>RStudio</category>
-      <guid>https://fishydata.netlify.app/posts/2021-04-14-alfred</guid>
+      <link>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</link>
+      <description>Do White Sturgeon exhibit partial migration?</description>
+      <guid>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</guid>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>

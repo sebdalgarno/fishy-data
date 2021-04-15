@@ -2,17 +2,17 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About me",
+      "title": "Seb Dalgarno",
       "author": [],
-      "contents": "\nHi I’m Seb Dalgarno.\nI’m interested in all things rstats, fish ecology, acoustic telemetry, Bayesian stats, data visualization, and various other data/computery things.\nThe blog name ‘Fishy Data’ is of course a little play on words. I work with fish data and this data is often fishy. The data cleaning process has forced me to become a better programmer and to think more deeply about efficient analysis pipelines.\nI’m a PhD student in Eduardo Martin’s Freshwater Fish Ecology lab. We are using many years of acoustic telemetry data to investigate White Sturgeon movement and habitat use in support of recovery in the Upper Columbia River. Formerly, I was a computational biologist at Poisson Consulting.\nCheck out my consulting website if you’d like to hire me.\n{{% center %}}  {{% /center %}}\n\n\n\n",
-      "last_modified": "2021-04-14T20:55:59-07:00"
+      "contents": "\nI’m interested in all things rstats, fish ecology, acoustic telemetry, Bayesian stats, data visualization, and various other data/computery things.\nThe blog name ‘Fishy Data’ is of course a little play on words. I work with fish data and this data is often fishy. The data cleaning process has forced me to become a better programmer and to think more deeply about efficient analysis pipelines.\nI’m a PhD student in Eduardo Martin’s Freshwater Fish Ecology lab. We are using many years of acoustic telemetry data to investigate White Sturgeon movement and habitat use in support of recovery in the Upper Columbia River. Formerly, I was a computational biologist at Poisson Consulting.\nCheck out my consulting website if you’d like to hire me.\n\n\n\n\n",
+      "last_modified": "2021-04-14T22:16:28-07:00"
     },
     {
       "path": "index.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-14T20:55:59-07:00"
+      "last_modified": "2021-04-14T22:16:29-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

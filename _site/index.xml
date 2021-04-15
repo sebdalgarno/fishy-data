@@ -4,7 +4,7 @@
     <title>Fishy Data</title>
     <link>https://fishydata.netlify.app</link>
     <atom:link href="https://fishydata.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
-    <description>A blog about R, fish movement, acoustic telemetry, Bayesian inference and other computery things
+    <description>A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>

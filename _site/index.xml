@@ -7,7 +7,28 @@
     <description>A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>On Nathan's movement ecology paradigm</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-14-movement-ecology</link>
+      <description>A reflection on how Nathan et al.'s 2008 paper 'A movement ecology paradigm for unifying organismal movement research' might apply to the study of fish movement from acoustic telemetry.</description>
+      <category>Movement Ecology</category>
+      <category>Acoustic Telemetry</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-14-movement-ecology</guid>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hidden Markov Models for fish movement</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-15-hmm</link>
+      <description>Exploring the use of HMMs for understanding fish movement and behaviour from capture-recapture and acoustic telemetry data.</description>
+      <category>Stats</category>
+      <category>Movement Ecology</category>
+      <category>Hidden Markov Model</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-15-hmm</guid>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Alfred + .Rproj</title>
       <dc:creator>Seb Dalgarno</dc:creator>
@@ -36,14 +57,6 @@
       <category>Productivity</category>
       <category>GitHub</category>
       <guid>https://fishydata.netlify.app/posts/2021-04-14-github-cli</guid>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>On Nathan's movement ecology paradigm</title>
-      <dc:creator>Seb Dalgarno</dc:creator>
-      <link>https://fishydata.netlify.app/posts/2021-04-14-movement-ecology</link>
-      <description>A reflection on how Nathan et al.'s 2008 paper 'A movement ecology paradigm for unifying organismal movement research' might apply to the study of fish movement from acoustic telemetry.</description>
-      <guid>https://fishydata.netlify.app/posts/2021-04-14-movement-ecology</guid>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
     </item>
   </channel>

@@ -19,26 +19,6 @@
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Detection range in acoustic telemetry arrays</title>
-      <dc:creator>Seb Dalgarno</dc:creator>
-      <link>https://fishydata.netlify.app/posts/2021-04-14-detection-range</link>
-      <description>Accounting for detection range variation in acoustic telemetry arrays</description>
-      <category>Acoustic Telemetry</category>
-      <category>Bayesian Stats</category>
-      <category>Rstats</category>
-      <guid>https://fishydata.netlify.app/posts/2021-04-14-detection-range</guid>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://fishydata.netlify.app/posts/2021-04-14-detection-range/detection-range_files/figure-html5/dr_plot-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Partial migration</title>
-      <dc:creator>Seb Dalgarno</dc:creator>
-      <link>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</link>
-      <description>Do White Sturgeon exhibit partial migration?</description>
-      <guid>https://fishydata.netlify.app/posts/2021-04-14-partial-migration</guid>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Git alias tricks</title>
       <dc:creator>Seb Dalgarno</dc:creator>
       <link>https://fishydata.netlify.app/posts/2021-04-14-git-alias</link>

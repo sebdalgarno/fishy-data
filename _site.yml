@@ -1,26 +1,34 @@
 name: "fishy-data"
-title: "Fishy Data"
+title: "Fishy Data Blog"
 description: |
   A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
-output_dir: "_site"
 base_url: https://fishydata.netlify.app
+output_dir: "_site"
 navbar:
-  logo: images/rstudio.png
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Contributors"
-      href: contributors.html
+    - icon: fa fa-twitter
+      href: https://twitter.com/sebdalgarno
+    - icon: fa fa-github
+      href: https://github.com/sebdalgarno
     - icon: fa fa-rss
       href: index.xml
-output: 
-  distill::distill_article:
-    css: styles.css
 collections:
   posts:
-    disqus: fishy-data
-    share: [twitter]
-    subscribe: _subscribe.html
-    custom: _custom.html
+    share: [twitter, linkedin]
+    subscribe: _buymeacoffee.html
+google_analytics: "UA-166026965-1"
+twitter:
+  site: "@sebdalgarno"
+  creator: "@sebdalgarno"
+output: 
+  distill::distill_article:
+    includes:
+      in_header: utterances.html
+theme: theme.css
+preview: static/site-preview.png
+rss:
+  full_content: false

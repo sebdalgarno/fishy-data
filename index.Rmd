@@ -1,5 +1,5 @@
 ---
-title: "Fishy Data"
+title: "Fishy Data Blog"
 site: distill::distill_website
 listing: posts
 ---

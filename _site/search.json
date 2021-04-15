@@ -6,14 +6,14 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-14T19:30:06-07:00"
+      "last_modified": "2021-04-14T20:34:01-07:00"
     },
     {
       "path": "index.html",
-      "title": "Fishy Data",
+      "title": "Fishy Data Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-14T19:30:07-07:00"
+      "last_modified": "2021-04-14T20:34:02-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

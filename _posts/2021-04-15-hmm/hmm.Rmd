@@ -31,10 +31,11 @@ A Hidden Markov Model (HMM) is a special case of a state-space model that has a 
 
 HMMs have two major simplifying assumptions, one each for the state process and observation process. A major assumption for the state process is he Markov property - the probability of a state being active at time t is dependent on the state at time t - 1. A major assumption for the observation process is conditional independence - the probability distribution of an observation at time t is completely dependent on the state at time t (and is independent of any other states or observations). 
 
-A HMM is specified with three major componenets:  
+A HMM is specified with three major componenets:   
+
 1. the intitial distribution - a vector of probabilities for each state at the start of the time sequence.  
-1. state transition probabilities - a matrix of probabilities for switching from any state at time t to another state at time t + 1.  
-1. state-dependent distribution - probability distribution of an observation conditional on the state at time t. This depends on the form of the observed data, e.g. count data are poisson distributed, positive continous data may be gamm distributed, etc. 
+1. state transition probabilities - a matrix of probabilities for switching from any state at time t to another state at time t + 1.    
+1. state-dependent distribution - probability distribution of an observation conditional on the state at time t. This depends on the form of the observed data, e.g. count data are poisson distributed, positive continous data may be gamm distributed, etc.  
 
 A model can be fit using Maximum Likelihood or Bayesian methods. 
 

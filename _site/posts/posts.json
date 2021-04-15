@@ -58,5 +58,45 @@
     "preview": {},
     "last_modified": "2021-04-14T20:54:33-07:00",
     "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-14-git-alias/",
+    "title": "Git alias tricks",
+    "description": "Using a git alias to commit and stage all files and other fancy tricks.",
+    "author": [
+      {
+        "name": "Seb Dalgarno",
+        "url": "https://github.com/sebdalgarno"
+      }
+    ],
+    "date": "2021-04-14",
+    "categories": [
+      "Productivity",
+      "RStudio"
+    ],
+    "contents": "\nTL;DR type git config --global alias.coa \"!git add -A && git commit -m\" in the command line. From now on, use git coa 'message here' to commit and stage all files!\nOverview\nFor years I have staged, committed and pushed changes with the RStudio Git interface.\n\nIt works! But I’ve realized that it’s much more efficient (and not hard!) to do from the command line. Check out this sweet resource by Jenny Bryan for more info on git with r.\nGit from the command line\nThis solution on stackoverflow suggests staging, committing and pushing all files by running the following in the command line:\ngit add -A && git commit -m \"rebuild site\"\ngit push\n\nGit alias\nReal productivity gains are made by using git aliases, which remove the need to type (and remember) full git commands. Let’s start with a simple example. To set up the alias git p for git push, we run in the command line:\ngit config --global alias.p \"push\"\nGoing back to our original use case, we can set up the alias git coa:\ngit config --global alias.coa \"!git add -A && git commit -m\"\nFrom now on, we can stage, commit and push all changes with two simple commands:\ngit coa 'rebuild site'\ngit p\nHere are some more useful aliases:\nCreate and checkout branch\ngit config --global alias.bc \"checkout -b\"\ngit bc some_new_branch\nDelete branch locally and remotely (from here)\ngit config --global alias.bd '!sh -c \"git branch -D $1 && git push origin :$1\" -'\n\ngit bd some_new_branch\nKeyboard shortcut to Terminal\nTo completely remove the need to use the mouse, I’ve set up a customized keyboard shortcut1 Cmd-3 to move the cursor to the RStudio Terminal. Check out this great tutorial on customizing keyboard shortcuts in RStudio. The advantage of using the RStudio terminal and not the MacOS Terminal app (or iterm2)2 is that it is automatically drilled down into the directory of your project.\n🎉🎉🎉\n\nI also use Cmd-1 to move cursor to script and Cmd-2 to move cursor to console.↩︎\nThese tips are for Mac users. I’m not sure how to do the above in Windows.↩︎\n",
+    "preview": {},
+    "last_modified": "2021-04-14T22:41:11-07:00",
+    "input_file": "git-alias.utf8.md"
+  },
+  {
+    "path": "posts/2021-04-14-github-cli/",
+    "title": "GitHub from the command line",
+    "description": "Some tips and tricks for interacting with GitHub from the command line.",
+    "author": [
+      {
+        "name": "Seb Dalgarno",
+        "url": "https://github.com/sebdalgarno"
+      }
+    ],
+    "date": "2021-04-14",
+    "categories": [
+      "Productivity",
+      "GitHub"
+    ],
+    "contents": "\nOverview\nNavigating around the GitHub website between various repos/issues etc. is most definitely a time waster. I’ve decided to dig into the GitHub CLI. You can install it using homebrew with brew install gh and authorize it by running gh auth login in the command line (more info in this manual). Here’s a few things I found useful.\nDealing with issues\nList issues\nOnce you are drilled down into the project directory in the command line (or simply go to Terminal in an RStudio project), type the following:\ngh issue list\n\n# Showing 3 of 3 open issues in sebdalgarno/blog\n# \n# #6  add shortcodes                     about 1 day ago\n# #5  get RSS button working             about 1 day ago\n# #2  not rendering Rmd                  about 2 days ago\nView issues\nAs I’m writing this I realize that I’ve already solved #2. I’ll view it just to make sure.\ngh issue view 2\n\n# not rendering Rmd\n# Open • sebdalgarno opened about 2 days ago • 0 comments\n# \n# \n#   blogdown problem as other themes also not working                           \n# \n# \n# View this issue on GitHub: https://github.com/sebdalgarno/blog/issues/2\nClose issues\nYes! this was solved by moving to hugodown. I’ll close it.\ngh issue close 2\n# ✔ Closed issue #2 (not rendering Rmd)\nAs an aside, I use this neat little trick to close issues automatically by adding fixes #33 to a commit message (where 33 is the issue #). gh issue list is going to be super helpful to find the issue #.\nCreate issues\nI’ll create an issue to finish this post. I am being a little hard on myself here (since I’m already working on it!), but I really should finish this post.\ngh issue create --title \"Finish GitHub CLI post\" --body \"Seriously, do it.\"\n\n# Creating issue in sebdalgarno/blog\n# \n# https://github.com/sebdalgarno/blog/issues/9\nand confirm:\ngh issue list\n\n# Showing 3 of 3 open issues in sebdalgarno/blog\n#\n# #9  Finish GitHub CLI post             about 1 minute ago\n# #6  add shortcodes                     about 1 day ago\n# #5  get RSS button working             about 1 day ago\nDealing with pull requests\nCreate changes on a branch\nI’m going to create a branch called ‘fix_that_bug’ and fix that bug (you know, that one). Then I’ll commit and push those changes.\ngit cb fix_that_bug\n# Switched to a new branch \"fix_that_bug\"\n\ngit coa 'fixed it'\n[fix_that_bug 35457d9] fixed it\n 1 file changed, 3 insertions(+), 1 deletion(-)\n \ngit p\n{{% admonition tip tip %}} If the above git commands look strange that’s because they’re aliases! Check out my post on git alias for details. {{% /admonition %}}\nCreate pull request and merge\nNow I’ll create a pull request with gh,\ngh pr create --title \"fixed it\" --body \"good lord that took me 35 hours\" \n\n# ? Where should we push the 'fix_that_bug' branch? sebdalgarno/blog\n#\n# Creating pull request for fix_that_bug into master in sebdalgarno/blog\n#\n# remote: \n# remote: \n# To github.com:sebdalgarno/blog.git\n#  * [new branch]      HEAD -> fix_that_bug\n# Branch 'fix_that_bug' set up to track remote branch 'fix_that_bug' from 'origin'.\n# https://github.com/sebdalgarno/blog/pull/12\ncheck the diff (Ctrl-c to quit process)\ngh pr diff 12\nmerge it,\ngh pr merge 12\n# ? What merge method would you like to use? Create a merge commit\n# ? Delete the branch locally and on GitHub? Yes\n# ? Submit? Yes\n# ✔ Merged pull request #12 (fixed it)\n# ✔ Deleted branch fix_that_bug and switched to branch master\nand pull into local master (or main) branch.\ngit pull\nThat’s it for now!\nOh ya one more thing\ngh issue close 9\n# ✔ Closed issue #9 (Finish GitHub CLI post)\n{{% admonition tip tip %}} See the full list of commands and examples and some resources for setting up scripts and aliases. {{% /admonition %}}\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-14T22:44:20-07:00",
+    "input_file": "github-cli.utf8.md"
   }
 ]

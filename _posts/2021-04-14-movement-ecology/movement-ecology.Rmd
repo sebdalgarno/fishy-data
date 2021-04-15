@@ -1,7 +1,7 @@
 ---
-title: "movement-ecology"
+title: "On Nathan's movement ecology paradigm"
 description: |
-  A short description of the post.
+  A reflection on how Nathan et al.'s 2008 paper 'A movement ecology paradigm for unifying organismal movement research' might apply to the study of fish movement from acoustic telemetry.
 author:
   - name: Seb Dalgarno
     url: https://github.com/sebdalgarno
@@ -16,8 +16,32 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+The study of animal movement has advanced a lot in recent years. Nathan suggests that advancements in animal tracking technology, environmental monitoring, and analytical methods (i.e. from increased computational power) have led to a general shift from the study of population redistribution (Eularian approach) to the study of individuals (Lagrangian approach). This has enabled development of more complex models (e.g. state-space models for individual animal movement) and increased understanding. However, Nathan suggests that a common framework is necessary to unify several paradigms for animal movement (i.e. biomechanical, cognitive, random, optimality) that are operating parallel to one another. 
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+In this attempt to unify the study of animal movement, Nathan's paper suggests that there are four overarching questions (note Nathan is talking generally about organismal movement, but I will narrow this down a bit to animals):  
+1. Why do animals move?  
+2. How do animals move?  
+3. When and where do animals move?   
+4. What are the external factors driving animal movement?   
+
+Following from this, Nathan suggests that animal movement is a function of internal state (why), motion capacity (how), navigation capacity (when and where) and external factors (abiotic and biotic). In this formulation, the motion process and navigation process are both impacted by current location, internal state (i.e. physiological or neurological state affecting motivation and readiness to move) and external factors. The movement propagation process is the realized movement resulting from the motion process, which is optionally affected by the navigation process.
+
+![Framework for animal movement (Nathan et al. 2008)](process.png)
+
+The result of this process is a lifetime movement track, which is observed by us. This track can be parsed into sub-units at various spatial and temporal scales: movement paths that represent particular phenomena such as feeding or migrating; and at even finer scales, movement steps which could correspond to a few steps and a stop. Our ability to successfully identify movement phases depends on our ability to sample an individual's movement (i.e. sampling frequency, duration and protocol).
+
+![Spatiotemporal scales of sanimal movement (Nathan et al. 2008)](path.png)
+
+This leads me to the first major challenge in the study of fish movement from acoustic telemetry arrays: limited sampling frequency and duration. Movement tracks from stationary receivers produce frequent and potentially large gaps in our knowledge of a fishes movement over time. These occur when a fish is moving or resting between receivers, or has died or emigrated outside of the receiver array.
+
+Specialized statistical methods such as state-space models are required to separate the ecological state of interest from detection error. Hidden Markov Models are a class of state-space models useful for uncovering a finite number of states of interest (e.g., resident vs transitory states) with great potential for advancing the study of fish movement from acoustic telemetry by uncovering movement paths from 'noisy' data.
+
+The utility of Nathan's framework is to force us to more comprehensively think about different drivers of fish movement and to incorporate these into our models. Typical studies of fish movement patterns are primarily interested relating the internal state (i.e., motivations for moving such as feeding or spawning) with external factors (e.g., water temperature, discharge). These fall under the 'optimality' paradigm discussed by Nathan and common in landscape ecology. 
+
+The challenge therefore is to incorporate motion capacity and navigation capacity into our models of fish movement, thus brdiging the optimality paradigm with the biomechanical and cognitive paradigms. There is a lot potential here in the the use of Data Storage Tags to measure physiological or environmental information as a fish moves (e.g., water temperature, heart rate, muscle activity, acceleration). This would improve our understanding of the entire motion process (i.e., motion capacity in relation to internal state and external factors). We can also use our understanding of the cognitive or physiological aspects of navigation to improve our ability ot model the navigation process (i.e., navigation capacity in relation to internal state and external factors) along with the motion process.
+
+Through advancements in technology (e.g., better tags, collection of physiological/environmental data as fish moves), statistical methods (e.g., state-space models), and understanding of navigation capacity of fish, there is great potential to apply Nathan's framework for a unified animal movement paradigm to the study of fish movement with acoustic telemetry.
+
+
 
 

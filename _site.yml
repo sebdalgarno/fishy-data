@@ -1,7 +1,7 @@
 name: "fishy-data"
 title: "Fishy Data"
 description: |
-  A blog about R, fish movement, acoustic telemetry, Bayesian inference and other computery things
+  A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
 output_dir: "_site"
 base_url: https://fishydata.netlify.app
 navbar:

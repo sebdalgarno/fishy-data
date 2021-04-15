@@ -1,9 +1,27 @@
 ---
-title: "About this blog"
+title: "About me"
 description: |
-  Some additional details about the blog
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Hi I'm Seb Dalgarno. 
+
+I'm interested in all things rstats, fish ecology, acoustic telemetry, Bayesian stats, data visualization, and various other data/computery things. 
+
+The blog name 'Fishy Data' is of course a little play on words. I work with fish data and this data is often fishy. The data cleaning process has forced me to become a better programmer and to think more deeply about efficient analysis pipelines.
+
+I'm a PhD student in Eduardo Martin's [Freshwater Fish Ecology lab](https://www.ffishlab.ca/). We are using many years of acoustic telemetry data to investigate White Sturgeon movement and habitat use in support of recovery in the Upper Columbia River. Formerly, I was a computational biologist at [Poisson Consulting](https://www.poissonconsulting.ca). 
+
+Check out my [consulting website](https://www.northbeachconsulting.ca/) if you'd like to hire me.
+
+{{% center %}}
+<img src="/img/sturgeon_sm.jpg" alt="sturgeon"
+	title="sturgeon" width="400px" />
+{{% /center %}}
+
+
+
+

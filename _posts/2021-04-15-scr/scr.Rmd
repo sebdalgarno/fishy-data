@@ -1,0 +1,28 @@
+---
+title: "Spatial capture-recapture"
+description: |
+  A short description of the post.
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-15-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Landscape ecology
+
+Population ecology
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

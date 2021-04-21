@@ -1,7 +1,7 @@
 ---
-title: "Hidden process models"
+title: "It's a hidden process model"
 description: |
-  Hidden Markov Models, State-Space Models, Spatial Capture-Recapture models and putting them into into neat boxes. 
+  Is it possible for a model to be categorized as a Hidden Markov Model, State-Space Model, and Spatial Capture-Recapture model, all at the same time? 
 author:
   - name: Seb Dalgarno
     url: https://github.com/sebdalgarno
@@ -43,17 +43,15 @@ This may already be clear to you, but the answer is yes, it is all of these thin
 
 # Hidden process models
 
-According to @King.2013, many ecological models have developed independently leading to different terminology. However, these modeling approaches are unified by the underlying idea that they have a hidden (or unobserved) componenet that we are interested in uncovering. @King.2013 calls these *Hidden process models*. They separate the unobserved (or partially observed) system process from the observation process, where the system process is associated with the underlying (hidden) ecological states that we are interested in (e.g., location, behavioral state). 
+According to @King.2013, many ecological models have developed independently, leading to different terminology. A group of these models (termed *hidden process models*) all couple a system process describing the underlying hidden biological process of interest (e.g., behavioural state, spatial location) with an observation process (i.e., the actua data measured). The observed data are conditionally independent given the underlying states. Since multiple models are combined, these can broadly be classified as heirarchical or generalized linear mixed models [@Whoriskey.20198je].
 
 ```{r hidden, echo=FALSE, fig.cap="A graphical representation of a hidden Markov model (HMM) or state-space model (SSM) where Y1 , Y2 , . . . , YT denote the underlying system process and X1,X2,...,XT denote the corresponding observation process [@King.2013].", preview=TRUE}
 knitr::include_graphics("hidden-process.png")
 ```
 
 
-@Jonsen.2013 uses slightly different terminology to describe the same approach. They state that these models "estimate the state of an unobservable process from an observed data set", each of which is represented by a **process model** and an **observation model(**. Since multiples are combined, these can broadly be classified as heirarchical or generalized linear mixed models [@Whoriskey.20198je].
-
 # HMM + SSM
-HMM and SSMs are both hidden process models and are very closely related. Kim Whoriskey provides further clarity in her PhD thesis, with reference to @Auger-Méthé.2020:  
+HMM and SSMs are both hidden process models that are very closely related. Kim Whoriskey provides further clarity in her PhD thesis, with reference to @Auger-Méthé.2020:  
 
 > "Despite their separate developmental histories, HMMs and SSMs are both hierarchical models wherein the observations are dependent upon a set of unobserved variables - random effects, or states - that follow a Markov process, and the literature appears to have converged around the viewpoint that HMMs are special cases of SSMs with discrete latent states" 
 
@@ -62,13 +60,13 @@ We can therefore make the following distinction:
 - **HMM** - unobserved random effects (latent states) are discrete  
 - **SSM** - unobserved random effects (latent states) are continuous  
 
-In animal movement studies, SSMs are generally used to predict location, whereas HMMs are used to predict behavioural states. Switching models can be used to predict location and behaviour simultaneously, thus enabling us to account for location error (if it exists) and estimate behavioural state from the corrected locations. This is different to the approach of predicting location first and using the predictions as the response variable to predict behaviour in an HMM, which fails to carry over uncertainty in location prediction into the HMM.
+In animal movement studies, SSMs are generally used to predict spatial location, whereas HMMs are used to predict discrete behavioural states. Switching models can be used to predict location and behaviour simultaneously, thus enabling us to account for location error (if it exists) and estimate behavioural state from the corrected locations [@Jonsen.2013]. This is better than simply using predicted location as a response variable in a second model (HMM) because it is able to include the uncertainty in location prediction in estimates of behavioural state.
 
 # Where does SCR fit in?
-SCR can be formulated as a hidden process model (although it doesn't have to be). In this form of SCR model, we separate the underlying system process (spatial point pattern of fixed activity centers for each individual) from the observation process (observed spatial encounter history of individual, i.e., from telemetry array or trapping grid). The observation process model is a function of detection probability, which is estimated as a function of Euclidean distance from the activity center and a given receiver.
+SCR methods are catered toward a specific kind of ecological data - spatial enounter histories - which are generated from trapping grids or similar sampling technologies (e.g., acoustic telemetry arrays). An SCR model can be formulated as a hidden process model (although it doesn't have to be). In this form of SCR model, we separate the underlying system process (spatial point pattern of fixed activity centers for each individual) from the observation process (i.e., observed spatial encounter history of individual). The observation process model is a function of detection probability, which is estimated as a function of Euclidean distance from the activity center and a given receiver.
 
 # Bringing it home
 
-Coming back to @Dorazio.2019hq, we can say that the modeling approach is a spatial switching model [@Jonsen.2013] that estimates both spatial location and behaviour in the process model. This allows us to deal with location error at the same time as estimating the behavioral state of interest. The behavioral states are finite (resident vs transient) so we call it a HMM. The spatial location (i.e., individual activity center) is formulated as a spatial point process model, following SCR methods.  
+Coming back to @Dorazio.2019hq, we can say that the modeling approach is a spatial switching model [@Jonsen.2013], where the process model (or system process) consists of both movement (i.e., change in latent activity center) and behavioural state. The latent behavioral states of interest are discrete (resident vs transient), hence classification as an HMM. The movement aspect (i.e., individual activity centers) is formulated as a spatial point process model, following SCR methods.  
 
 

@@ -9,10 +9,10 @@
     <generator>Distill</generator>
     <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Hidden process models</title>
+      <title>It's a hidden process model</title>
       <dc:creator>Seb Dalgarno</dc:creator>
       <link>https://fishydata.netlify.app/posts/2021-04-16-latent-models</link>
-      <description>Hidden Markov Models, State-Space Models, Spatial Capture-Recapture models and putting them into into neat boxes.</description>
+      <description>Is it possible for a model to be categorized as a Hidden Markov Model, State-Space Model, and Spatial Capture-Recapture model, all at the same time?</description>
       <category>State-Space Models</category>
       <category>Spatial Capture-Recapture</category>
       <category>Statistical Models</category>

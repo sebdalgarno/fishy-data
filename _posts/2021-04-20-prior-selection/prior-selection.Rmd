@@ -1,0 +1,26 @@
+---
+title: "The prior can often only be understood in the context of the likelihood"
+description: |
+  An exploration of the ideas presented in Gelman et al. (2017) on prior selection in Bayesian models.
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-20-2021
+output:
+  distill::distill_article:
+    self_contained: false
+categories:
+  - Bayesian Stats
+  - Paper Discussion
+  - Prior Selection
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Types of priors
+
+# Is it cheating to use the likelihood to inform prior selection?
+

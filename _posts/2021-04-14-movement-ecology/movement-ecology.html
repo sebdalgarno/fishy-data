@@ -121,7 +121,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["movement-ecology_files/anchor-4.2.2/anchor.min.js","movement-ecology_files/bowser-1.9.3/bowser.min.js","movement-ecology_files/distill-2.2.21/template.v2.js","movement-ecology_files/header-attrs-2.7/header-attrs.js","movement-ecology_files/jquery-1.11.3/jquery.min.js","movement-ecology_files/popper-2.6.0/popper.min.js","movement-ecology_files/tippy-6.2.7/tippy-bundle.umd.min.js","movement-ecology_files/tippy-6.2.7/tippy-light-border.css","movement-ecology_files/tippy-6.2.7/tippy.css","movement-ecology_files/tippy-6.2.7/tippy.umd.min.js","movement-ecology_files/webcomponents-2.0.0/webcomponents.js","path.png","process.png","refs.bib","statsrefs.bib"]}
+  {"type":"character","attributes":{},"value":["movement-ecology_files/anchor-4.2.2/anchor.min.js","movement-ecology_files/bowser-1.9.3/bowser.min.js","movement-ecology_files/distill-2.2.21/template.v2.js","movement-ecology_files/header-attrs-2.7/header-attrs.js","movement-ecology_files/jquery-1.11.3/jquery.min.js","movement-ecology_files/popper-2.6.0/popper.min.js","movement-ecology_files/tippy-6.2.7/tippy-bundle.umd.min.js","movement-ecology_files/tippy-6.2.7/tippy-light-border.css","movement-ecology_files/tippy-6.2.7/tippy.css","movement-ecology_files/tippy-6.2.7/tippy.umd.min.js","movement-ecology_files/webcomponents-2.0.0/webcomponents.js","path.png","process.png","refs.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1499,12 +1499,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>What are the external factors driving animal movement?</li>
 </ol>
 <p>Following from this, it is suggested that animal movement is a function of internal state (why), motion capacity (how), navigation capacity (when and where) and external factors (abiotic and biotic). In this formulation, the motion process and navigation process are both impacted by current location, internal state (i.e. physiological or neurological state affecting motivation and readiness to move) and external factors. The movement propagation process is the realized movement resulting from the motion process, which is optionally affected by the navigation process.</p>
-<figure>
-<img src="process.png" alt="Framework for animal movement (Nathan et al. 2008)" /><figcaption aria-hidden="true">Framework for animal movement (Nathan et al. 2008)</figcaption>
-</figure>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:framework"></span>
+<img src="process.png" alt="Framework for animal movement [@Nathan.2008]" width="443" data-distill-preview=1 />
+<p class="caption">
+Figure 1: Framework for animal movement <span class="citation" data-cites="Nathan.2008">(<a href="#ref-Nathan.2008" role="doc-biblioref">Nathan et al. 2008</a>)</span>
+</p>
+</div>
+</div>
 <p>The result of this process is a lifetime movement track, which (at least partially) is observed by us. This track can be parsed into sub-units at various spatial and temporal scales. At a finer scale, movement paths can represent particular phenomena such as feeding or migrating. At even finer scales, movement steps might correspond to a few steps and a stop. Our ability to successfully identify movement phases depends on our ability to sample an individual’s movement (i.e. sampling frequency, duration and protocol).</p>
 <figure>
-<img src="path.png" alt="Spatiotemporal scales of sanimal movement (Nathan et al. 2008)" /><figcaption aria-hidden="true">Spatiotemporal scales of sanimal movement (Nathan et al. 2008)</figcaption>
+<img src="path.png" alt="Spatiotemporal scales of sanimal movement (Nathan et al. 2008)" /><figcaption aria-hidden="true">Spatiotemporal scales of sanimal movement <span class="citation" data-cites="Nathan.2008">(<a href="#ref-Nathan.2008" role="doc-biblioref">Nathan et al. 2008</a>)</span></figcaption>
 </figure>
 <p>A major challenge in the study of fish movement from acoustic telemetry is that sampling frequency and duration is often limited. Movement tracks from stationary receivers typically have frequent and potentially large gaps in observed fish position in space and time. These gaps can occur when a fish is moving or resting between receivers, has died or emigrated outside of the receiver array, or has not been detected despite actually being present due to detection error. Note, however, that it is possible in some small study areas (e.g. small lake) to set up an acoustic telemetry array capable of collecting fine scale position data, allowing us to reconstruct a continuous track of an individual’s movement (more akin to satelite temetry data).</p>
 <p>Specialized statistical methods such as state-space models are required to uncover the ecological process of interest (e.g. spatial position) from typically noisy observation data. Hidden Markov Models are a class of state-space models useful for uncovering a finite number of states of interest (e.g., behavioral states such as resident vs transitory), which could correspond to ‘movement paths’ <span class="citation" data-cites="McClintock.2020f5m">(<a href="#ref-McClintock.2020f5m" role="doc-biblioref">McClintock et al. 2020</a>)</span>. Spatial capture-recapture models also have great potential for estimating distribution/density over time (i.e. as an animal’s activity center, or collection of activity centers), taking into account detection error <span class="citation" data-cites="Royle.2018z84">(<a href="#ref-Royle.2018z84" role="doc-biblioref">Royle, Fuller, and Sutherland 2018</a>)</span>.</p>

@@ -34,11 +34,13 @@ In this attempt to unify the study of animal movement, @Nathan.2008 suggests tha
 
 Following from this, it is suggested that animal movement is a function of internal state (why), motion capacity (how), navigation capacity (when and where) and external factors (abiotic and biotic). In this formulation, the motion process and navigation process are both impacted by current location, internal state (i.e. physiological or neurological state affecting motivation and readiness to move) and external factors. The movement propagation process is the realized movement resulting from the motion process, which is optionally affected by the navigation process.
 
-![Framework for animal movement (Nathan et al. 2008)](process.png)
+```{r framework, echo=FALSE, fig.cap="Framework for animal movement [@Nathan.2008]", preview=TRUE}
+knitr::include_graphics("process.png")
+```
 
 The result of this process is a lifetime movement track, which (at least partially) is observed by us. This track can be parsed into sub-units at various spatial and temporal scales. At a finer scale, movement paths can represent particular phenomena such as feeding or migrating. At even finer scales, movement steps might correspond to a few steps and a stop. Our ability to successfully identify movement phases depends on our ability to sample an individual's movement (i.e. sampling frequency, duration and protocol).
 
-![Spatiotemporal scales of sanimal movement (Nathan et al. 2008)](path.png)
+![Spatiotemporal scales of sanimal movement [@Nathan.2008]](path.png)
 
 A major challenge in the study of fish movement from acoustic telemetry is that sampling frequency and duration is often limited. Movement tracks from stationary receivers typically have frequent and potentially large gaps in observed fish position in space and time. These gaps can occur when a fish is moving or resting between receivers, has died or emigrated outside of the receiver array, or has not been detected despite actually being present due to detection error. Note, however, that it is possible in some small study areas (e.g. small lake) to set up an acoustic telemetry array capable of collecting fine scale position data, allowing us to reconstruct a continuous track of an individual's movement (more akin to satelite temetry data).
 

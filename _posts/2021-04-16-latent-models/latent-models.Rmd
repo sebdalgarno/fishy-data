@@ -1,7 +1,7 @@
 ---
-title: "They're all latent state models"
+title: "Hidden process models"
 description: |
-  Putting Hidden Markov Models, State Space Models and Spatial Capture-Recapture models into boxes. 
+  Hidden Markov Models, State-Space Models, Spatial Capture-Recapture models and putting them into into neat boxes. 
 author:
   - name: Seb Dalgarno
     url: https://github.com/sebdalgarno
@@ -9,7 +9,12 @@ date: 04-16-2021
 output:
   distill::distill_article:
     self_contained: false
-draft: true
+draft: false
+bibliography: refs.bib
+categories: 
+  - State-Space Models
+  - Spatial Capture-Recapture
+  - Statistical Models
 ---
 
 
@@ -17,22 +22,53 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Acoustic telemetry data is more akin to camera trapping data (where individuals can be identified) than to methods for measuring continuous movement like GPS. They are both forms of capture-recapture data. The main difference is that with acoustic telemetry data we only have infomration on tagged individuals and therefore cannot make inferences about population abundance, whereas camera trap grids are able to sample any individuals from the entire population. 
+# Which model is it?
+I'll be honest, I was initially confused as I read @Dorazio.2019hq as to what kind of modelling approach was being used. 
 
-Hidden Markov Models (HMM), State Space Models (SSM) and Spatial Capture-Recapture (SCR) models 
-HMMs and SSMs are both 
+Reading the title  
 
-Kim Whoriskey provides some clarity in her PhD thesis:  
+> "State-space models to infer movements and behavior of fish detected in a spatial array of acoustic receivers"
 
-> "Despite their separate developmental histories, HMMs and SSMs are both hierarchical models wherein the observations are dependent upon a set of unobserved variables - random effects, or states - that follow a Markov process, and the literature appears to have converged around the viewpoint that HMMs are special cases of SSMs with discrete latent states (Auger-Methe et al., 2020)" 
+it is clear State-Space models (SSM) are used.
 
-She goes on to say to provide the following distinction:  
+Reading a section of the abstract
 
-**HMM** - unobserved random effects (latent states) are discrete
-**SSM** - unobserved random effects (latent states) are continuous
+> "In these models, fish movements and behavior switching are specified using a hidden Markov model of the changes in an individual’s latent activity center"
 
-In animal movement studies SSMs are generally used to predict location, whereas HMMs are used to predict behavioural states. A method for predicting location and behaviour at the same time (termeed Switching Heirarchical Models or SHM) is provided by Whoriskey (Date?). It is also possible to first predict location in a SSM and then use those predictions as the response variable to predict behaviour in an HMM (Cote et al. 2020 in Whoriskey PhD), although this method fails to carry over uncertainty in the SSM to the HHM.
+it is clear that a Hidden Markov Model (HMM) is used, and reference to "an individual's latent activity center" leads me to think that this is a Spatial Capture-Recapture (SCR) model, although the term "spatial capture-recapture" is not present in the paper.
 
-In fact, we can make our umbrella a bit larger to include SCR by saying that all three are heirarchical models consisting of a process model (the unobserved or latent state of interest) and an observation model (the data). In the case of SCR the latent state we are interested in is an animal's activity center, which is estimated after taking into account detection probability (i.e., based on location of sampling devices). 
+So what is going on here? Is it all of these things? 
+
+This may already be clear to you, but the answer is yes, it is all of these things. 
+
+# Hidden process models
+
+According to @King.2013, many ecological models have developed independently leading to different terminology. However, these modeling approaches are unified by the underlying idea that they have a hidden (or unobserved) componenet that we are interested in uncovering. @King.2013 calls these *Hidden process models*. They separate the unobserved (or partially observed) system process from the observation process, where the system process is associated with the underlying (hidden) ecological states that we are interested in (e.g., location, behavioral state). 
+
+```{r hidden, echo=FALSE, fig.cap="A graphical representation of a hidden Markov model (HMM) or state-space model (SSM) where Y1 , Y2 , . . . , YT denote the underlying system process and X1,X2,...,XT denote the corresponding observation process [@King.2013].", preview=TRUE}
+knitr::include_graphics("hidden-process.png")
+```
+
+
+@Jonsen.2013 uses slightly different terminology to describe the same approach. They state that these models "estimate the state of an unobservable process from an observed data set", each of which is represented by a **process model** and an **observation model(**. Since multiples are combined, these can broadly be classified as heirarchical or generalized linear mixed models [@Whoriskey.20198je].
+
+# HMM + SSM
+HMM and SSMs are both hidden process models and are very closely related. Kim Whoriskey provides further clarity in her PhD thesis, with reference to @Auger-Méthé.2020:  
+
+> "Despite their separate developmental histories, HMMs and SSMs are both hierarchical models wherein the observations are dependent upon a set of unobserved variables - random effects, or states - that follow a Markov process, and the literature appears to have converged around the viewpoint that HMMs are special cases of SSMs with discrete latent states" 
+
+We can therefore make the following distinction:   
+
+- **HMM** - unobserved random effects (latent states) are discrete  
+- **SSM** - unobserved random effects (latent states) are continuous  
+
+In animal movement studies, SSMs are generally used to predict location, whereas HMMs are used to predict behavioural states. Switching models can be used to predict location and behaviour simultaneously, thus enabling us to account for location error (if it exists) and estimate behavioural state from the corrected locations. This is different to the approach of predicting location first and using the predictions as the response variable to predict behaviour in an HMM, which fails to carry over uncertainty in location prediction into the HMM.
+
+# Where does SCR fit in?
+SCR can be formulated as a hidden process model (although it doesn't have to be). In this form of SCR model, we separate the underlying system process (spatial point pattern of fixed activity centers for each individual) from the observation process (observed spatial encounter history of individual, i.e., from telemetry array or trapping grid). The observation process model is a function of detection probability, which is estimated as a function of Euclidean distance from the activity center and a given receiver.
+
+# Bringing it home
+
+Coming back to @Dorazio.2019hq, we can say that the modeling approach is a spatial switching model [@Jonsen.2013] that estimates both spatial location and behaviour in the process model. This allows us to deal with location error at the same time as estimating the behavioral state of interest. The behavioral states are finite (resident vs transient) so we call it a HMM. The spatial location (i.e., individual activity center) is formulated as a spatial point process model, following SCR methods.  
 
 

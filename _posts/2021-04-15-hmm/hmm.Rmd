@@ -14,6 +14,7 @@ categories:
   - Stats
   - Movement Ecology
   - Hidden Markov Model
+  - Acoustic Telemetry
 twitter:
   site: "@sebdalgarno"
   creator: "@sebdalgarno"
@@ -49,7 +50,7 @@ A HMM can be applied to a wide variety of questions about the existential, devel
 ### Survival
 We can estimate surival (an existential question) using the Cormack-Jolly Seber model, with 2 states (alive and dead),where the probability of transitioning from dead to alive is set at 0. 
 
-```{r survival, echo=FALSE, fig.cap="Specification for a survival HMM [@McClintock.2020f5m]"}
+```{r survival, echo=FALSE, fig.cap="Specification for a survival HMM [@McClintock.2020f5m]", preview=TRUE}
 knitr::include_graphics("survival-hmm.png")
 ```
 

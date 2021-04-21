@@ -7,7 +7,19 @@
     <description>A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Hidden process models</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-16-latent-models</link>
+      <description>Hidden Markov Models, State-Space Models, Spatial Capture-Recapture models and putting them into into neat boxes.</description>
+      <category>State-Space Models</category>
+      <category>Spatial Capture-Recapture</category>
+      <category>Statistical Models</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-16-latent-models</guid>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fishydata.netlify.app/posts/2021-04-16-latent-models/hidden-process.png" medium="image" type="image/png" width="1172" height="390"/>
+    </item>
     <item>
       <title>Nathan's movement ecology paradigm</title>
       <dc:creator>Seb Dalgarno</dc:creator>
@@ -17,6 +29,7 @@
       <category>Acoustic Telemetry</category>
       <guid>https://fishydata.netlify.app/posts/2021-04-14-movement-ecology</guid>
       <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fishydata.netlify.app/posts/2021-04-14-movement-ecology/process.png" medium="image" type="image/png" width="886" height="810"/>
     </item>
     <item>
       <title>Hidden Markov Models for fish movement</title>
@@ -26,6 +39,7 @@
       <category>Stats</category>
       <category>Movement Ecology</category>
       <category>Hidden Markov Model</category>
+      <category>Acoustic Telemetry</category>
       <guid>https://fishydata.netlify.app/posts/2021-04-15-hmm</guid>
       <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://fishydata.netlify.app/posts/2021-04-15-hmm/survival-hmm.png" medium="image" type="image/png" width="1308" height="308"/>

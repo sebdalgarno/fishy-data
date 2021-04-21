@@ -27,6 +27,7 @@ Given distribution and a sample area, we can estimate density.
 
 A major limitation of application of SCR to acoustic telemetry is that we cannot make inferences about population abundance. We can only make inference about density/distribution of the individuals that are tagged. However, these data can be supplemented with traditional capture-recapture data to make inferences about the population. 
 
+Acoustic telemetry data is more akin to camera trapping data (where individuals can be identified) than to methods for measuring continuous movement like GPS. They are both forms of capture-recapture data. The main difference is that with acoustic telemetry data we only have infomration on tagged individuals and therefore cannot make inferences about population abundance, whereas camera trap grids are able to sample any individuals from the entire population. 
 
 
 

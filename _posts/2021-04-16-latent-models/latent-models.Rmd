@@ -1,0 +1,38 @@
+---
+title: "They're all latent state models"
+description: |
+  Putting Hidden Markov Models, State Space Models and Spatial Capture-Recapture models into boxes. 
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-16-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Acoustic telemetry data is more akin to camera trapping data (where individuals can be identified) than to methods for measuring continuous movement like GPS. They are both forms of capture-recapture data. The main difference is that with acoustic telemetry data we only have infomration on tagged individuals and therefore cannot make inferences about population abundance, whereas camera trap grids are able to sample any individuals from the entire population. 
+
+Hidden Markov Models (HMM), State Space Models (SSM) and Spatial Capture-Recapture (SCR) models 
+HMMs and SSMs are both 
+
+Kim Whoriskey provides some clarity in her PhD thesis:  
+
+> "Despite their separate developmental histories, HMMs and SSMs are both hierarchical models wherein the observations are dependent upon a set of unobserved variables - random effects, or states - that follow a Markov process, and the literature appears to have converged around the viewpoint that HMMs are special cases of SSMs with discrete latent states (Auger-Methe et al., 2020)" 
+
+She goes on to say to provide the following distinction:  
+
+**HMM** - unobserved random effects (latent states) are discrete
+**SSM** - unobserved random effects (latent states) are continuous
+
+In animal movement studies SSMs are generally used to predict location, whereas HMMs are used to predict behavioural states. A method for predicting location and behaviour at the same time (termeed Switching Heirarchical Models or SHM) is provided by Whoriskey (Date?). It is also possible to first predict location in a SSM and then use those predictions as the response variable to predict behaviour in an HMM (Cote et al. 2020 in Whoriskey PhD), although this method fails to carry over uncertainty in the SSM to the HHM.
+
+In fact, we can make our umbrella a bit larger to include SCR by saying that all three are heirarchical models consisting of a process model (the unobserved or latent state of interest) and an observation model (the data). In the case of SCR the latent state we are interested in is an animal's activity center, which is estimated after taking into account detection probability (i.e., based on location of sampling devices). 
+
+

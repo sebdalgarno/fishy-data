@@ -1,7 +1,7 @@
 ---
-title: "Detection range in acoustic telemetry arrays"
+title: "Acoustic telemetry detection range variation"
 description: |
-  Accounting for detection range variation in acoustic telemetry arrays
+  Part 1 of a series - overview of the issue and how to deal with it generally. 
 author:
   - name: Seb Dalgarno
     url: https://github.com/sebdalgarno
@@ -24,7 +24,12 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-I have been reading [this great paper](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13322) by Brownscombe et al., which outlines a practical approach to accounting for detection range (DR) variation in acoustic telemetry arrays. As an example of the pitfalls of failing to account for variation in DR, Brownscombe points to a study by [Payne et al. (2010)](https://www.int-res.com/abstracts/meps/v419/p295-301/) on the diel patterns in use of nearshore habitats by cuttlefish. Whereas the raw data showed that cuttlefish used these areas more during the day, the corrected data showed that they used these areas more at night. Not only did this affect the effect size, but it completely changed the directionality of the effect, which fundamentally changes our understanding of the species biology and how to manage them!
+# What could possibly go wrong?
+B As an example of the pitfalls of failing to account for variation in DR, Brownscombe points to 
+
+A study by [Payne et al. (2010)](https://www.int-res.com/abstracts/meps/v419/p295-301/) on the diel patterns of nearshore habitat use by cuttlefish provides a cautionary tale for the failure to account for detection range variation. Whereas raw (uncorrected) data showed that cuttlefish used these areas more during the day, the corrected data showed that they used these areas more at night. Not only did this change the effect size, but it completely changed the directionality of the effect, which fundamentally changes our understanding of the species biology and how to manage them!
+
+Brownscombe et al. 2020 outlines a practical approach to accounting for detection range (DR) variation in acoustic telemetry arrays.
 
 # Why is there variation in detection range?
 In acoustic telemetry studies, we typically set up an array of stationary receivers within a study area and tag some animals with acoustic transmitters. These animals (let's say fish) swim around sending out supersonic acoustic transmissions every few seconds. When the fish passes within the receivers detection range, the receiver records the unique id of the transmitter and time of detection. So far, pretty straightforward (at least from a data perspective, not logistically!) The tricky part is that **detection efficiency (DE) decreases with distance from receiver and the DR for each receiver varies in space and time**.

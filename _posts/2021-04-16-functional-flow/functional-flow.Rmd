@@ -1,0 +1,26 @@
+---
+title: "What aspects of flow to quantify?"
+description: |
+  A short description of the post.
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-16-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+We know that river flow is a (the?) major driver of riverine ecosystem processes. It therefore makes sense to include some measurement of river flow in our regression models when relating to some aspect of a species existence that we are inteerested in (e.g. abundance, spwning success, movement). This seems straightforward. However, there are so many ways that we can measure a river flow!
+
+![Functional flow components in a seasonal river (Yarnell et al. 2020))](functional-flow-components.png)
+
+
+
+

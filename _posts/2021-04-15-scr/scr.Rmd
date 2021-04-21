@@ -1,7 +1,7 @@
 ---
-title: "Spatial capture-recapture"
+title: "Spatial capture-recapture models for acoustic telemetry"
 description: |
-  A short description of the post.
+  Spatial capture-recapture has great potential to answer interesting questions related to population and landscape ecology.  
 author:
   - name: Seb Dalgarno
     url: https://github.com/sebdalgarno
@@ -17,12 +17,18 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Landscape ecology
+combines population ecology (typically capture-recapture) with landscape ecology to answer questions about spatial distribution and density. 
 
-Population ecology
+Similar to HMM and state-space models, SCR is a heirarchical model composed of a process model (state process) and an observation model (observation process). The process model is the ecological state of interest and the observation model represents the data that we have collected, i.e. an set of individual spatial encounter histories.
 
-Distill is a publication format for scientific and technical writing, native to the web.
+With SCR we predict distribution from an animal's activity centers over a time period. Activity centers are the process state of interest, modelled by spatial point process model. Location is predicted based on activity center and detection error as a distance function from the sampling point and activity center - i.e. if an animal is not being detected very often by some receiver, we might assume that activity center is far away from a receiver and detection probability is low. 
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Given distribution and a sample area, we can estimate density. 
+
+A major limitation of application of SCR to acoustic telemetry is that we cannot make inferences about population abundance. We can only make inference about density/distribution of the individuals that are tagged. However, these data can be supplemented with traditional capture-recapture data to make inferences about the population. 
+
+
+
+
 
 

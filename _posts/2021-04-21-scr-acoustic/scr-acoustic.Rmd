@@ -1,0 +1,72 @@
+---
+title: "Spatial Capture-Recapture for acoustic telemetry"
+description: |
+  what is spatial capture-recapture and how can it be applied to acoustic telemetry data (especially from linear arrays)?
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-21-2021
+output:
+  distill::distill_article:
+    self_contained: false
+categories:
+  - Spatial Capture-Recapture
+  - Hidden Process Models
+  - Acoustic Telemetry
+  - Statistical Models
+  - Bayesian Stats
+bibliography: refs.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Unifying population and landscape ecology
+Population ecology is concerned with animal movement, demographic rates (e.g., growth rate, survival rate) and variation in population size/structure. It is not concerned with the effects of within-population spatial processes on populations. 
+
+Population dynamics in time and space are driven by structure of the landscape. Landscape ecology is concerned with linking ecological processes to landscape structure (e.g., landscape connectivity, resource selection functions). However, landscape ecology studies typically focus on individuals, without a formal way to make inferences about the population and without taking into account how individuals are sampled from a population. 
+
+Capture-recapture (CR) methods have become the cornerstone of population ecology. They allow us to make inferences about populations when we are only able to observe a small fraction of individuals, at a limited number of locations and points in time. However, CR methods are disconnected from spatial structure, reducing sampled spatial encounter histories to sequences of observed/not observed. This eliminates the possibility to study important ecological questions such as within-population spatial structure (i.e., population density in relation to landscape covariates).
+
+(reword to be more clear)
+Spatial capture-recapture (SCR) aims to unify aspects of population and landscape ecology to allow us to investigate within-population spatial and temporal dynamics in relation to landscape structure. With this, we can answer quesions about density, movement, landscape connectivity, resource selection, and others. With SCR we can downscale population structure from coarse-scale summaries into finer-scale information that maintains spatial information of each individual encounter history. 
+
+# The problem of density as motivating example
+Density is a population state of interest in most animal monitoring studies. When we try to estimate population abundance or density from non-spatially-explicit closed-population CR methods, we run into two major issues:  
+
+1. It is difficult to estimate density (population abundane/area) when we canot precisely define the area that we've sampled when individuals can move in and out of the sample region.  
+1. The probability of sampling an individual varies by device and location (e.g., individuals at outer edge of sampling grid have lower probability of capture).
+
+Without spatial information about the sampling devices carried into the model, it is impossible to address these issues formally.
+
+# A Spatial Capture-Recapture model
+Spatial Capture-Recapture models are heirarchical models that couple a spatial point process model representing the 
+
+combines population ecology (typically capture-recapture) with landscape ecology to answer questions about spatial distribution and density. 
+
+Similar to HMM and state-space models, SCR is a heirarchical model composed of a process model (state process) and an observation model (observation process). The process model is the ecological state of interest and the observation model represents the data that we have collected, i.e. an set of individual spatial encounter histories.
+
+With SCR we predict distribution from an animal's activity centers over a time period. Activity centers are the process state of interest, modelled by spatial point process model. Location is predicted based on activity center and detection error as a distance function from the sampling point and activity center - i.e. if an animal is not being detected very often by some receiver, we might assume that activity center is far away from a receiver and detection probability is low. 
+
+The main benefit of SCR is to formally estimate location, taking into account detection probability (i.e., as a function of distance from the activity center to the sampling device). 
+
+Given distribution and a sample area, we can estimate density. 
+
+# How can SCR be applied to acoustic telemetry data?
+
+Acoustic telemetry data is similar to capture-recapture data collected from terrestrial sampling technologies like hair snares or trapping grids. As such, methods developed in the terrestrial capture-recapture literature are typically more applicable to acoustic telemetry than, for example, methods developed for satelite telemetry.  In both acoustic telemetry and terrestrial trapping, unique individuals are identified at stationary and continuously monitored traps (or acoustic receivers), providing a spatial encounter history of each individual. One key difference in acoustic telemetry data is that information is only collected from tagged individuals and therefore inferences only apply to the sampled individuals (limiting, for example, estimation of population abundance). However, these data can be supplemented with general capture-recapture data of both tagged and non-tagged individuals (e.g., from fishing) to make population-level inferences. 
+
+One typical use for acoustic telemetry data (especially for freshwater fisheries) is to estimate demographic parameters such as survival (and associated rates such as natural or fishing mortality rates). This was very common in the freshwater fisheries analyses done at my previous employer [Poisson Consulting](https://poissonconsulting.ca). These demographic parameters are very useful for management of freshwater fisheries. However, in these analyses, spatial encounter histories are reduced to a temporal sequence of observed/not observed and spatial information is lost. SCR methods can remedy this, allowing us to study spatial ecological phenomena (e.g., movement, distribution, density), as well as non-spatial phenomena. 
+
+# Some example studies
+Few examples of applications of SCR to acoustic telemetry exist to date. In general, acoustic telemetry technology appears to be advancing faster than the statistical methods required to analyze the data they produce. As a result, acoustic telemetry studies investigating spatial ecological phenomena typically resort to descriptive statistics, data summaries and data visualizations, which lack quantitative rigor [@Raabe.2014996]. 
+
+There are some examples of application of SCR methods to acoustic telemetry data in linear arrays (e.g., along a river represented by one-dimensional spatial location, river kilometer); notably, @Raabe.2014996 and Dorazio.2019hq.
+
+
+
+
+
+

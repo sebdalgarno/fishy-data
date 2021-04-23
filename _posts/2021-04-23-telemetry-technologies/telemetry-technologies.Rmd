@@ -1,0 +1,28 @@
+---
+title: "telemetry-technologies"
+description: |
+  A short description of the post.
+author:
+  - name: Seb Dalgarno
+    url: https://github.com/sebdalgarno
+date: 04-23-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Telemetry data
+There are three telemetry methods commonly used with aquatic animals:  
+
+1. **radio telemetry** - A tag implanted on a fish transmits radio frequencies that are detected by an antenna fixed onto a receiver.  
+1. **acoustic telemetry** - A tag implanted on a fish transmits ultrasonic (acoustic) frequencies that are detected by a hydrophone on a receiver.  
+1. **Passive Integrated Transponders (PIT)** - A tag implanted in a fish that does not require batteries, but rather relies on external energy from an electromagenetic field emitted by a receiver anetenna or handheld device. The tradeoff is a prolonged tag lifespan, but very close proximity is required for detection.
+
+Recently, there has been a shift toward telemetry at fixed receiver stations (i.e., acoustic telemetry and PIT). These data (referred to as 'detection' data) basically consist of unique ID of fish (transmitter), timestamp of detection, and receiver ID (which can be linked to location via receiver deployment information).
+
+

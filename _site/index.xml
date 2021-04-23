@@ -23,6 +23,17 @@
       <media:content url="https://fishydata.netlify.app/posts/2021-04-21-scr-acoustic/half-normal.png" medium="image" type="image/png" width="1090" height="588"/>
     </item>
     <item>
+      <title>Statistical methods for acoustic telemetry data</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-20-whoriskey-methods</link>
+      <description>A summary of Whoriskey et al. (2019) exploration of current and emerging statistical techniques for acoustic telemetry data.</description>
+      <category>Acoustic Telemetry</category>
+      <category>Stats</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-20-whoriskey-methods</guid>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fishydata.netlify.app/posts/2021-04-20-whoriskey-methods/network.png" medium="image" type="image/png" width="1120" height="590"/>
+    </item>
+    <item>
       <title>It's a hidden process model</title>
       <dc:creator>Seb Dalgarno</dc:creator>
       <link>https://fishydata.netlify.app/posts/2021-04-16-its-a-hidden-process-model</link>

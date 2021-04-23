@@ -7,7 +7,21 @@
     <description>A blog about R, fish movement, acoustic telemetry, Bayesian stats and other computery things
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Spatial Capture-Recapture for acoustic telemetry</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-21-scr-acoustic</link>
+      <description>what is spatial capture-recapture and how can it be applied to acoustic telemetry data (especially from linear arrays)?</description>
+      <category>Spatial Capture-Recapture</category>
+      <category>Hidden Process Models</category>
+      <category>Acoustic Telemetry</category>
+      <category>Statistical Models</category>
+      <category>Bayesian Stats</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-21-scr-acoustic</guid>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fishydata.netlify.app/posts/2021-04-21-scr-acoustic/half-normal.png" medium="image" type="image/png" width="1090" height="588"/>
+    </item>
     <item>
       <title>It's a hidden process model</title>
       <dc:creator>Seb Dalgarno</dc:creator>
@@ -32,10 +46,10 @@
       <media:content url="https://fishydata.netlify.app/posts/2021-04-14-movement-ecology/process.png" medium="image" type="image/png" width="886" height="810"/>
     </item>
     <item>
-      <title>Hidden Markov Models for fish movement</title>
+      <title>Hidden Markov Models for fish ecology</title>
       <dc:creator>Seb Dalgarno</dc:creator>
       <link>https://fishydata.netlify.app/posts/2021-04-15-hmm</link>
-      <description>Exploring the use of HMMs for understanding fish movement and behaviour from capture-recapture and acoustic telemetry data.</description>
+      <description>What are HMMs, how are they used in ecology and how can they improve our understanding of fish movement and behaviour?</description>
       <category>Stats</category>
       <category>Movement Ecology</category>
       <category>Hidden Markov Model</category>

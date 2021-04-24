@@ -34,6 +34,17 @@
       <media:content url="https://fishydata.netlify.app/posts/2021-04-20-whoriskey-methods/network.png" medium="image" type="image/png" width="1120" height="590"/>
     </item>
     <item>
+      <title>Selecting useful river flow metrics in ecology</title>
+      <dc:creator>Seb Dalgarno</dc:creator>
+      <link>https://fishydata.netlify.app/posts/2021-04-16-functional-flow</link>
+      <description>How do we identify useful river flow metrics to study the effect of flow regimes on riverine and riparian ecosystem processes?</description>
+      <category>River Flow</category>
+      <category>River Regulation</category>
+      <guid>https://fishydata.netlify.app/posts/2021-04-16-functional-flow</guid>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://fishydata.netlify.app/posts/2021-04-16-functional-flow/functional-flow-components.png" medium="image" type="image/png" width="798" height="936"/>
+    </item>
+    <item>
       <title>It's a hidden process model</title>
       <dc:creator>Seb Dalgarno</dc:creator>
       <link>https://fishydata.netlify.app/posts/2021-04-16-its-a-hidden-process-model</link>
